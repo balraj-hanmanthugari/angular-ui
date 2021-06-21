@@ -4,10 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:production": "ng build --configuration=production",
-    "test": "ng test --code-coverage",
     "lint": "ng lint",
+    "build": "ng build --configuration=production",
+    "test": "ng test --code-coverage --watch=false",
     "e2e": "ng e2e"
   },
   "private": true,
