@@ -1,0 +1,10 @@
+<h1 mat-dialog-title class="title-style">{{data.title}}</h1>
+<div mat-dialog-content class="content-style">
+  {{data.message}}
+  <div class="spinner-style" *ngIf="data.name === 'spinner'"><mat-spinner></mat-spinner></div>
+</div>
+<div mat-dialog-actions class="footer-style">
+  <button *ngFor="let buttonItem of data.buttons" mat-button (click)="onButtonClick(buttonItem)">
+      {{buttonItem.name}}
+  </button>
+</div>

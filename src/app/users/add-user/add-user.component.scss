@@ -1,0 +1,45 @@
+@import "./../../global-styles";
+
+.add-user-container {
+    @include flex-mixin(column);
+    align-items: center;
+
+    h3 {
+        text-align: center;
+    }
+
+    .form-group {
+        @include flex-mixin(column);
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+
+    label {
+        width: 250px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 250px;
+        height: 20px;
+        margin-bottom: 5px;
+    }
+
+    select {
+        width: 250px;
+        height: 26px;
+        margin-bottom: 5px;
+    }
+
+    .form-control-feedback {
+        font-size: 14px;
+        color: red;
+        width: 250px;
+    }
+
+    .btn-container {
+        @include flex-mixin(row);
+        justify-content: flex-end;
+    }
+}

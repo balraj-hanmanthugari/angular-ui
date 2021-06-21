@@ -1,0 +1,18 @@
+<div class="registration-preview-container">
+    <h3>Registration Details</h3>
+    <div class="form-control">
+        <label class="form-control-label">First Name:</label>
+        <label class="form-control-display">{{registrationDetails.firstName}}</label>
+    </div>
+    <div class="form-control">
+        <label class="form-control-label">Last Name:</label>
+        <label class="form-control-display">{{registrationDetails.lastName}}</label>
+    </div>
+    <div class="form-control">
+        <label class="form-control-label">Email Id:</label>
+        <label class="form-control-display">{{registrationDetails.emailId}}</label>
+    </div>
+    <div class="btn-container">
+        <button mat-button (click)="registerUser()">Register</button>
+    </div>
+</div>

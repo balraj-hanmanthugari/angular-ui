@@ -1,0 +1,11 @@
+<h3>{{gridConfigOptions.title}}</h3>
+<app-angular-grid
+    [gridConfig]="gridConfigOptions"
+    [dataSource]="data"
+    (sendSelectedRows)="getSelectedGridRows($event)"
+></app-angular-grid>
+
+<div class="btn-container">
+    <button mat-button (click)="editLocation()">Edit</button>
+    <button mat-button (click)="deleteLocation()">Delete</button>
+</div>

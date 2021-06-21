@@ -1,0 +1,40 @@
+<h3>Your upcoming tours</h3>
+<hr/>
+<div *ngFor="let bookedTour of bookedTours">
+  <header>{{bookedTour.name}}</header>
+  <section>
+    <div class="locations-div">
+        <span class="location-span">Locations: {{bookedTour.locations[0].location.address}}</span>
+    </div>
+      <div class="duration-div">
+          <span class="duration-span">Duration: {{bookedTour.duration}} Days</span>
+          <span>Max People: {{bookedTour.maxGroupSize}}</span>
+      </div>
+  </section>
+  <footer>
+      <span class="price-span">Price: {{bookedTour.bookings[0].price}}</span>
+      <button mat-button (click)="cancelTheTour(bookedTour)">Cancel</button>
+  </footer>
+</div>
+
+<h3>Your past tours</h3>
+<hr/>
+<div *ngFor="let bookedTour of bookedTours">
+<header>{{bookedTour.name}}</header>
+<section>
+    <div class="duration-div">
+        <span class="duration-span">Duration: {{bookedTour.duration}} Days</span>
+        <span>Max People: {{bookedTour.maxGroupSize}}</span>
+    </div>
+    <div class="ratings-div">
+        <div>Your Rating: <input type="text" [(ngModel)]="bookedTour.reviews[0]?bookedTour.reviews[0].rating:bookedTour.rating"/></div>
+        <div>Your Review: 
+            <textarea [(ngModel)]="bookedTour.reviews[0]?bookedTour.reviews[0].review:bookedTour.review"></textarea>
+        </div>
+    </div>
+</section>
+<footer>
+    <span class="price-span">Price: {{bookedTour.bookings[0].price}}</span>
+    <button *ngIf="!bookedTour.reviews[0]" mat-button [disabled]="!bookedTour.rating || !bookedTour.review" (click)="rateTheTour(bookedTour)">Save</button>
+    <button *ngIf="bookedTour.reviews[0]" mat-button [disabled]="!bookedTour.reviews[0].rating || !bookedTour.reviews[0].review" (click)="rateTheTour(bookedTour)">Update</button>
+</footer>

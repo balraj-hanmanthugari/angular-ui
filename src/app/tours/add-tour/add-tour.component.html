@@ -1,0 +1,77 @@
+<div class="add-tour-container">
+  <h3>{{title}}</h3>
+  <form [formGroup]="tourForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name" required id="name"/>
+      <div class="form-control-feedback" *ngIf="tourForm.controls.name.errors && (tourForm.controls.name.dirty || tourForm.controls.name.touched)">
+        <div *ngIf="tourForm.controls.name.errors.required">First Name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Duration</label>
+      <input type="text" class="form-control" formControlName="duration" required id="duration"/>
+      <div class="form-control-feedback" *ngIf="tourForm.controls.duration.errors && (tourForm.controls.duration.dirty || tourForm.controls.duration.touched)">
+        <div *ngIf="tourForm.controls.duration.errors.required">Duration is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="maxGroupSize">Max Group Size</label>
+      <input type="text" class="form-control" formControlName="maxGroupSize" required id="maxGroupSize"/>
+      <div class="form-control-feedback" *ngIf="tourForm.controls.maxGroupSize.errors && (tourForm.controls.maxGroupSize.dirty || tourForm.controls.maxGroupSize.touched)">
+        <div *ngIf="tourForm.controls.maxGroupSize.errors.required">Start Date is required</div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" formControlName="category" required id="category">
+        <option value="domestic">Domestic</option>
+        <option value="international">International</option>
+      </select>
+      <div class="form-control-feedback" *ngIf="tourForm.controls.category.errors && (tourForm.controls.category.dirty || tourForm.controls.category.touched)">
+        <div *ngIf="tourForm.controls.category.errors.required">Category is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" formControlName="price" required id="price"/>
+      <div class="form-control-feedback" *ngIf="tourForm.controls.price.errors && (tourForm.controls.price.dirty || tourForm.controls.price.touched)">
+        <div *ngIf="tourForm.controls.price.errors.required">Price is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="startDates">Start Dates</label>
+      <input type="text" class="form-control" formControlName="startDates" id="startDates"/>
+    </div>
+
+    <div class="form-group">
+      <label for="locations">Locations</label>
+      <select class="form-control" formControlName="locations" required id="locations">
+        <option *ngFor="let location of locations" value="{{location._id}}">{{location.address}}</option>
+      </select>
+      <div class="form-control-feedback" *ngIf="tourForm.controls.locations.errors && (tourForm.controls.locations.dirty || tourForm.controls.locations.touched)">
+        <div *ngIf="tourForm.controls.locations.errors.required">Locations are required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="guides">Guides</label>
+      <select class="form-control" formControlName="guides" required id="guides">
+        <option *ngFor="let guide of tourGuides" value="{{guide._id}}">{{guide.firstName + " " + guide.lastName}}</option>
+      </select>
+      <div class="form-control-feedback" *ngIf="tourForm.controls.guides.errors && (tourForm.controls.guides.dirty || tourForm.controls.guides.touched)">
+        <div *ngIf="tourForm.controls.guides.errors.required">Guides are required</div>
+      </div>
+    </div>
+    
+    <div class="btn-container">
+        <button mat-button (click)="addTour()" [disabled]="tourForm.invalid" *ngIf="!isEditMode" >Add</button>
+        <button mat-button (click)="editTour()" [disabled]="tourForm.invalid" *ngIf="isEditMode" >Update</button>
+    </div>
+  </form>
+</div>
