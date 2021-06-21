@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private homeService: HomeService,
     private userService: UserService
-  ) {}
+  ) { }
 
   getBookedTours() {
     let user = this.userService.getUserSnapshot();

@@ -11,8 +11,8 @@ import { RegistrationPreviewComponent } from './registration-preview/registratio
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationService } from './authentication.service';
 
-import { StoreModule } from "@ngrx/store";
-import { authenticationReducer } from "./authentication.reducer";
+import { StoreModule } from '@ngrx/store';
+import { authenticationReducer } from './authentication.reducer';
 
 @NgModule({
   declarations: [

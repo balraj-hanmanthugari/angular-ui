@@ -10,7 +10,7 @@ import { UserService } from '../../authentication/user.service';
 export class AppHeaderComponent implements OnInit {
   user: any = {};
 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService) { }
 
   navigateToSignUp() {
     this.router.navigate(['/registration']);

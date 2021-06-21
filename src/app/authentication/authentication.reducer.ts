@@ -1,4 +1,4 @@
-import { ActionEx, authenticationActionTypes } from "./authentication.actions";
+import { ActionEx, authenticationActionTypes } from './authentication.actions';
 
 export interface AuthUserState {
     firstName: string;
@@ -15,26 +15,26 @@ const initialUser: any = {
 };
 
 export const authenticationReducer = (user = initialUser, action: ActionEx) => {
-    switch(action.type) {
+    switch (action.type) {
         case authenticationActionTypes.Login:
-        return [
-            ...user,
-            ...action.payload
-        ];
+            return [
+                ...user,
+                ...action.payload
+            ];
 
-        case authenticationActionTypes.CheckEmailId: 
-        return [
-            ...user,
-            action.payload
-        ];
+        case authenticationActionTypes.CheckEmailId:
+            return [
+                ...user,
+                action.payload
+            ];
 
         case authenticationActionTypes.Register:
-        return [
-            ...user,
-            action.payload
-        ];
-        
-        default: 
-        return user;
+            return [
+                ...user,
+                action.payload
+            ];
+
+        default:
+            return user;
     }
-}
+};
