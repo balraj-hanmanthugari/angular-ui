@@ -3,8 +3,6 @@ node_js:
  - "14"
 env:
  - NODE_ENV=ci
- - HEROKU_API_KEY=c72746a4-15f1-4c34-9732-6f4066d88e5a
- - HEROKU_APP_NAME=angular-ui-app
 dist: trusty
 services:
   - docker
