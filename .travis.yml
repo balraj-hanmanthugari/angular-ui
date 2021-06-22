@@ -3,11 +3,6 @@ node_js:
  - "14"
 env:
  - NODE_ENV=ci
-deploy:
- provider: heroku
- api_key:
-  secure: c72746a4-15f1-4c34-9732-6f4066d88e5a
- app: angular-ui-app # app name on heroku which am deploying to.
 dist: trusty
 services:
   - docker
@@ -24,7 +19,8 @@ script:
  - docker build -t balrrazh/balraj-repository1 .
  - docker push balrrazh/balraj-repository1:latest
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
- - heroku login
- - heroku container:login
- - heroku container:push web --app angular-ui-app
- - heroku container:release web --app angular-ui-app
+deploy:
+ provider: heroku
+ api_key:
+  secure: c72746a4-15f1-4c34-9732-6f4066d88e5a
+ app: angular-ui-app # app name on heroku which am deploying to.
