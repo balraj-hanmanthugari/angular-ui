@@ -4,6 +4,8 @@ node_js:
 env:
  - NODE_ENV=ci
 dist: trusty
+services:
+  - docker
 cache:
  directories:
   - node_modules
@@ -14,3 +16,6 @@ script:
  - npm run build
  - npm run test
  - docker build -t angular-ui-image .
+after_success:
+  - sh .travis/deploy_dockerhub.sh
+  - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
