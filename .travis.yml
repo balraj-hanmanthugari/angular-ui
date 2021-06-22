@@ -1,32 +1,26 @@
 language: javascript
 node_js:
- - "14"
+  - '14'
 env:
- - NODE_ENV=ci
+  - NODE_ENV=ci
 dist: trusty
 services:
   - docker
-#cache node/modules
 cache:
- directories:
-  - node_modules
-  - client/node_modules
-#install dependencies
+  directories:
+    - node_modules
+    - client/node_modules
 install:
- - npm ci
-#build, test 
+  - npm ci
 script:
- - npm run build
- - npm run test
-   #docker image creation and deploy to docker-hub 
- - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
- - docker build -t balrrazh/balraj-repository1 .
- - docker push balrrazh/balraj-repository1:latest
-#deploy to docker image to heroku 
+  - npm run build
+  - npm run test
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker build -t balrrazh/balraj-repository1 .
+  - docker push balrrazh/balraj-repository1:latest
 deploy:
- provider: heroku
- api_key:
-  secure: c72746a4-15f1-4c34-9732-6f4066d88e5a
- skip_cleanup: true
- app: angular-ui-app # app name on heroku which am deploying to.
- 
+  provider: heroku
+  skip_cleanup: true
+  api_key:
+    secure: JbnoRbPIP8YKwon92mqII9Fh2QbSnaNopmZetSdrxNiegzKcXqysRIDx99hGzKWaDk3UdDp+RaMSB6EDqK7acxrFk3cxuBjCZIQTC9yZJ7mxaoKECpLp3hPvqTFA976Xp3r1bpFTTe7w3TAs7tCRTHeA5S9NbFNWSC81gSeKw+9lBtwXjOucEKS6dcT1k1t2FCCfz44T3ox690QZ2RDi9zP9YuwWZ+eOCBsKI8DFvImz8lyx1RXgKSiCS0tiKpxQ+2z44ECo1KnxCzXJzFIrN18mTbuokBoMn0VhoQ0TMawfEyU0kgKZ+t/BXkGXbop+03kE36SuYQEinBTyUraIXJOJILXP7Ss2gOsPwPoD1+lMGKNMkF9VCJd1Bj+zARSyD1KWM4o6WYnEYq3RzxddR/dH1pL9VO+k1yef9AiTHPZMjKpDb49uXvwEaS/YKIBCCN56IrTqFfsq+L/vaQmId/sxI63zNYDXjwGvoCSqRr1vTk++jSlAu+Xc0NU7hIquJGLcgCyafRulvOFJPIjTBkZPxEWOxh+xvePxHM6KjgCcsnZ28JoguOrBy8RMUOKfjlNf3U8EeOwJqjny7I274uGDbMcQJAlfKEpwYdUrkPFk5CTqJVYjP65SCXYrzd5a5lLT/4Xlh06KDomVAGLuz3VLEwS80k2XnT4H9i0/Kz4=
+  app: angular-ui-app
