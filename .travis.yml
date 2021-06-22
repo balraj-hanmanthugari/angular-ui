@@ -6,20 +6,25 @@ env:
 dist: trusty
 services:
   - docker
+#cache node/modules
 cache:
  directories:
   - node_modules
   - client/node_modules
+#install dependencies
 install:
  - npm ci
+#build, test 
 script:
  - npm run build
  - npm run test
+   #docker image creation and deploy to docker-hub 
  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
  - docker build -t balrrazh/balraj-repository1 .
  - docker push balrrazh/balraj-repository1:latest
- - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+#deploy to docker image to heroku 
 deploy:
+ skip_cleanup: true
  provider: heroku
  api_key:
   secure: c72746a4-15f1-4c34-9732-6f4066d88e5a
