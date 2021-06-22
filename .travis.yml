@@ -4,6 +4,11 @@ node_js:
 env:
  - NODE_ENV=ci
 dist: trusty
+deploy:
+  provider: heroku
+  api_key:
+    secure: "c72746a4-15f1-4c34-9732-6f4066d88e5a"
+  app: angular-ui-app
 services:
   - docker
 cache:
