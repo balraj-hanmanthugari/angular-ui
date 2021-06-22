@@ -20,7 +20,6 @@ install:
 script:
  - npm run build
  - npm run test
- - docker build -t angular-ui-image .
-after_success:
-  - sh .travis/deploy_dockerhub.sh
-  - test "$TRAVIS_BRANCH" = "master" && sh .travis/deploy_heroku.sh
+ - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+ - docker build -t balrrazh/balraj-repository1 .
+ 
