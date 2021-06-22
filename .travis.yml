@@ -13,3 +13,4 @@ install:
 script:
  - npm run build
  - npm run test
+ - docker build -t angular-ui-image .
