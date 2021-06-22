@@ -27,6 +27,6 @@ deploy:
  provider: heroku
  api_key:
   secure: c72746a4-15f1-4c34-9732-6f4066d88e5a
- app: angular-ui-app # app name on heroku which am deploying to.
  skip_cleanup: true
+ app: angular-ui-app # app name on heroku which am deploying to.
  
