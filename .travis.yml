@@ -16,11 +16,5 @@ script:
   - npm run build
   - npm run test
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker build -t balrrazh/balraj-repository1 .
+  - docker build -t balrrazh/balraj-repository1 --tag v1 .
   - docker push balrrazh/balraj-repository1:latest
-deploy:
-  provider: firebase
-  skip_cleanup: true
-  token: 
-    secure: F8yKVXvafNOKDq8F/RgytLwxjHqYFxjQfnfqNK2We5+I5Tx/YPgEpMx879FVP3XmOjnkFeoSxb5b3LWE2CN1ASprbOQpdInAB8cLCeyom23K8GtGjx7hqai+7RiT6E0QO9xsyE2JMPzA2iOXomqVbKLMYLo2u9YrVYMiDfHkf0ZMSyr2FCRMsKEkWMT8wP6bI4nvu6d9t9DGh903G7dS8TbB04pSqoSqVbYbDFHf+T72LwwyZpAvde056vTaF969LyDi50KnsCSM9R9UcEQpdo8nTp5IfpGEQ2PAscFGcnfoRQGT5pGKKEqccc9OXE8Xv1swytj+guzUbnxdwPLsL32z9i53D3MUIp+WC4EXFYpBSjcX0KnaSwFVH+XSAIfwLCcfHdO+4epBdrFKHkudQ1Oh6qzFCRSStzirC6TezHAKtM8f4QEidsoVtUOZil+bvac0P7lc9eECchpe7RZFPNRi3ixT3EblWGSTUokleCGXHJBnM0IJNOzMkklGtP+9o5pF+Kk/y9+dbkMkPGNWFCcmlX7CEEyT85KwP85NHnJMth4HrBx3VApXy2Isk4g5NX7Dc/zFMMy9AGbj4r/mV6kbvXG+FxGKBxZd8KtiUGZAy5cMZETKn55Zp1zFzeYFEF293sTKj29ZJaXfqH59Eu6J7VEPBY7jkG2xP1NbrB4=
-
