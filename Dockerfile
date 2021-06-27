@@ -1,19 +1,12 @@
-FROM node:14
+# stage 1
 
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm ci --only=production
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
+FROM node:alpine AS my-app-build
+WORKDIR /app
 COPY . .
+RUN npm ci && npm run build
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+# stage 2
+
+FROM nginx:alpine
+COPY --from=my-app-build /app/dist/angular-ui /usr/share/nginx/html
+EXPOSE 80
