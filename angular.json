@@ -68,7 +68,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-ui:build:production"
+              "browserTarget": "angular-ui:build"
             }
           }
         },

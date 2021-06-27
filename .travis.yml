@@ -16,8 +16,8 @@ script:
 - npm run build
 - npm run test
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-- docker build -t balrrazh/balraj-repository1:v1 .
-- docker push balrrazh/balraj-repository1:v1
+- docker build -t balrajhanmanthugari/angular-ui:v1 .
+- docker push balrajhanmanthugari/angular-ui:v1
 deploy:
   skip_cleanup: true
   provider: heroku
