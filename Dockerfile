@@ -1,10 +1,4 @@
-# stage 1
-FROM node:alpine AS angular-ui-build
-WORKDIR /usr/src/app
-COPY . .
-RUN npm ci && npm run build
+# Deploy Stage 
+FROM nginx:1.17.1-alpine
 
-# stage 2
-FROM nginx:alpine
-COPY --from=angular-ui-build usr/src/app/dist/angular-ui /usr/share/nginx/html
-EXPOSE 8080
+COPY ./dist/angular-ui /usr/share/nginx/html
