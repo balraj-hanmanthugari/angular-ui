@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import { AjaxService } from '../util/ajax.service';
+import { Injectable } from "@angular/core";
+import { AjaxService } from "../util/ajax.service";
 
 @Injectable()
 export class TourPackagesService {
-  constructor(private ajaxService: AjaxService) { }
+    constructor(private ajaxService: AjaxService) {}
 
-  getTours() {
-    return this.ajaxService.ajaxGetCall('tour-packages');
-  }
+    getTours() {
+        return this.ajaxService.ajaxGetCall("tour-packages");
+    }
 
-  getTour(id) {
-    return this.ajaxService.ajaxGetCall('tour-packages/' + id);
-  }
+    getTour(id) {
+        return this.ajaxService.ajaxGetCall("tour-packages/" + id);
+    }
 
-  bookTheTour(booking) {
-    return this.ajaxService.ajaxPostCall('tour-packages/bookings', booking);
-  }
+    bookTheTour(booking) {
+        return this.ajaxService.ajaxPostCall("tour-packages/bookings", booking);
+    }
 }

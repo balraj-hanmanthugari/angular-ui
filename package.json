@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "pretty": "prettier --write --tab-width 4 \"src/**/*.ts\"",
     "lint": "ng lint",
     "build": "ng build --configuration=production",
     "test": "ng test --code-coverage --watch=false",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +47,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.1",
     "karma-jasmine": "~3.1.1",
     "karma-jasmine-html-reporter": "^1.6.0",
+    "prettier": "^2.3.2",
     "protractor": "^5.4.4",
     "ts-node": "~8.6.2",
     "tslint": "~6.0.0",

@@ -1,55 +1,55 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserService } from '../../authentication/user.service';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { UserService } from "../../authentication/user.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './app-header.component.html',
-  styleUrls: ['./app-header.component.scss']
+    selector: "app-header",
+    templateUrl: "./app-header.component.html",
+    styleUrls: ["./app-header.component.scss"],
 })
 export class AppHeaderComponent implements OnInit {
-  user: any = {};
+    user: any = {};
 
-  constructor(private router: Router, private userService: UserService) { }
+    constructor(private router: Router, private userService: UserService) {}
 
-  navigateToSignUp() {
-    this.router.navigate(['/authenticate/registration']);
-  }
+    navigateToSignUp() {
+        this.router.navigate(["/authenticate/registration"]);
+    }
 
-  navigateToSignIn() {
-    this.router.navigate(['/authenticate/login']);
-  }
+    navigateToSignIn() {
+        this.router.navigate(["/authenticate/login"]);
+    }
 
-  getUser() {
-    this.userService.getUser().subscribe(user => {
-      this.user = user;
-    });
-  }
+    getUser() {
+        this.userService.getUser().subscribe((user) => {
+            this.user = user;
+        });
+    }
 
-  openUserInfo() {
-    console.log('User Info is Temporarily Unavailable');
-  }
+    openUserInfo() {
+        console.log("User Info is Temporarily Unavailable");
+    }
 
-  isUserLoggedIn() {
-    return this.userService.isUserAuthenticated();
-  }
+    isUserLoggedIn() {
+        return this.userService.isUserAuthenticated();
+    }
 
-  logoutUser() {
-    this.userService.logoutUser().subscribe((response: any) => {
-      if (response.status === 'success') {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        this.router.navigate(['/login']);
-      }
-    });
-  }
+    logoutUser() {
+        this.userService.logoutUser().subscribe((response: any) => {
+            if (response.status === "success") {
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
+                this.router.navigate(["/login"]);
+            }
+        });
+    }
 
-  navigateToContact() {
-    console.log('Contact Page is Temporarily Unavailable');
-    //this.router.navigate(['/contact']);
-  }
+    navigateToContact() {
+        console.log("Contact Page is Temporarily Unavailable");
+        //this.router.navigate(['/contact']);
+    }
 
-  ngOnInit(): void {
-    this.getUser();
-  }
+    ngOnInit(): void {
+        this.getUser();
+    }
 }
