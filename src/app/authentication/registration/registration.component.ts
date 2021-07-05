@@ -36,7 +36,7 @@ export class RegistrationComponent implements OnInit {
       this.authenticationService.setRegistrationDetails(
         this.registrationDetails
       );
-      this.router.navigate(['registration-preview']);
+      this.router.navigate(['authenticate/registration-preview']);
     }
   }
 

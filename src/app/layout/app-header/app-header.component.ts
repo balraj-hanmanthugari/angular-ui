@@ -13,11 +13,11 @@ export class AppHeaderComponent implements OnInit {
   constructor(private router: Router, private userService: UserService) { }
 
   navigateToSignUp() {
-    this.router.navigate(['/registration']);
+    this.router.navigate(['/authenticate/registration']);
   }
 
   navigateToSignIn() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/authenticate/login']);
   }
 
   getUser() {

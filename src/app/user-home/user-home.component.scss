@@ -1,0 +1,42 @@
+header {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  section {
+    margin-bottom: 10px;
+    .locations-div {
+      margin-bottom: 5px;
+      .location-span {
+        margin-right: 15px;
+      }
+    }
+    .duration-div {
+      margin-bottom: 5px;
+      .duration-span {
+        margin-right: 15px;
+      }
+    }
+    .ratings-div {
+      .rating-span {
+        margin-right: 15px;
+      }
+      input {
+        width: 250px;
+        height: 20px;
+        margin-bottom: 5px;
+      }
+      text-area {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
+  footer {
+    margin-bottom: 30px;
+    font-weight: bold;
+    .price-span {
+      margin-right: 15px;
+    }
+  }
+  

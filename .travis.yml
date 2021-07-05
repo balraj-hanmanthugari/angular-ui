@@ -3,7 +3,7 @@ node_js:
 - '14'
 env:
 - NODE_ENV=ci
-dist: trusty
+dist: dist
 services:
 - docker
 cache:

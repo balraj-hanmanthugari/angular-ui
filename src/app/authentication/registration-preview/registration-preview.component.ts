@@ -22,7 +22,7 @@ export class RegistrationPreviewComponent implements OnInit {
   registerUser() {
     this.authenticationService.registerUser().subscribe((response: any) => {
       if (response.status === 'success' && response.data.user) {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/authenticate/login']);
       }
     });
   }
@@ -30,7 +30,7 @@ export class RegistrationPreviewComponent implements OnInit {
   ngOnInit(): void {
     this.registrationDetails = this.authenticationService.getRegistrationDetails();
     if (!this.registrationDetails.firstName) {
-      this.router.navigate(['/registration']);
+      this.router.navigate(['/authenticate/registration']);
     }
   }
 }

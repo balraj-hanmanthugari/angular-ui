@@ -1,17 +1,16 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthenticationGuard } from './authentication/authentication.guard';
-import { HomeComponent } from './home/home.component';
+import { UserHomeModule } from './user-home/user-home.module';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: 'authenticate',
+    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
     path: 'home',
-    component: HomeComponent,
+    loadChildren: () => import('./user-home/user-home.module').then(m => m.UserHomeModule),
     canActivate: [AuthenticationGuard]
   },
   {
@@ -40,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'login',
+    redirectTo: 'authenticate',
     pathMatch: 'full'
   }
 ];

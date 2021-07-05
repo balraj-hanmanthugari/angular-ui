@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from './home.service';
+import { UserHomeService } from './user-home.service';
 import { UserService } from 'src/app/authentication/user.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-user-home',
+  templateUrl: './user-home.component.html',
+  styleUrls: ['./user-home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class UserHomeComponent implements OnInit {
   bookedTours: any = [];
 
   constructor(
-    private homeService: HomeService,
+    private homeService: UserHomeService,
     private userService: UserService
   ) { }
 

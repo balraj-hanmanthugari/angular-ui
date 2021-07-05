@@ -4,7 +4,7 @@ import { AjaxService } from '../util/ajax.service';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class UserHomeService {
   constructor(private ajaxService: AjaxService) {}
 
   getBookedTours(userId) {
