@@ -5,18 +5,18 @@ import { LocationService } from "./location.service";
 import { AjaxService } from "../util/ajax.service";
 
 describe("LocationService", () => {
-    let http: HttpClient;
-    let service: LocationService;
+  let http: HttpClient;
+  let service: LocationService;
 
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [LocationService],
-        });
-        service = TestBed.inject(LocationService);
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [LocationService],
     });
+    service = TestBed.inject(LocationService);
+  });
 
-    it("should be created", () => {
-        expect(service).toBeTruthy();
-    });
+  it("should be created", () => {
+    expect(service).toBeTruthy();
+  });
 });

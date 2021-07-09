@@ -9,29 +9,29 @@ import { AddUserComponent } from "./add-user.component";
 import { UsersService } from "./../users.service";
 
 describe("AddUserComponent", () => {
-    let component: AddUserComponent;
-    let fixture: ComponentFixture<AddUserComponent>;
+  let component: AddUserComponent;
+  let fixture: ComponentFixture<AddUserComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            imports: [
-                RouterTestingModule,
-                FormsModule,
-                ReactiveFormsModule,
-                HttpClientTestingModule,
-            ],
-            declarations: [AddUserComponent],
-            providers: [UsersService],
-        }).compileComponents();
-    }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+      ],
+      declarations: [AddUserComponent],
+      providers: [UsersService],
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(AddUserComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AddUserComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it("should create", () => {
-        expect(component).toBeTruthy();
-    });
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
 });

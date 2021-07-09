@@ -4,15 +4,15 @@ import { HttpClient } from "@angular/common/http";
 import { TourService } from "./tour.service";
 
 describe("TourService", () => {
-    beforeEach(() =>
-        TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [TourService],
-        })
-    );
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [TourService],
+    })
+  );
 
-    it("should be created", () => {
-        const service: TourService = TestBed.get(TourService);
-        expect(service).toBeTruthy();
-    });
+  it("should be created", () => {
+    const service: TourService = TestBed.get(TourService);
+    expect(service).toBeTruthy();
+  });
 });

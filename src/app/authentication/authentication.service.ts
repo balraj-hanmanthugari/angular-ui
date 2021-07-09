@@ -3,28 +3,28 @@ import { AjaxService } from "../util/ajax.service";
 
 @Injectable()
 export class AuthenticationService {
-    registrationDetails = {};
+  registrationDetails = {};
 
-    constructor(private ajaxService: AjaxService) {}
+  constructor(private ajaxService: AjaxService) {}
 
-    setRegistrationDetails(registerData) {
-        this.registrationDetails = registerData;
-    }
+  setRegistrationDetails(registerData) {
+    this.registrationDetails = registerData;
+  }
 
-    getRegistrationDetails() {
-        return this.registrationDetails;
-    }
+  getRegistrationDetails() {
+    return this.registrationDetails;
+  }
 
-    checkEmailId(emailId) {
-        return this.ajaxService.ajaxPostCall("regLogin/checkEmailId", {
-            emailId: emailId,
-        });
-    }
+  checkEmailId(emailId) {
+    return this.ajaxService.ajaxPostCall("regLogin/checkEmailId", {
+      emailId: emailId,
+    });
+  }
 
-    registerUser() {
-        return this.ajaxService.ajaxPostCall(
-            "regLogin/register",
-            this.registrationDetails
-        );
-    }
+  registerUser() {
+    return this.ajaxService.ajaxPostCall(
+      "regLogin/register",
+      this.registrationDetails
+    );
+  }
 }

@@ -9,29 +9,29 @@ import { FormBuilder, Validators } from "@angular/forms";
 import { TourService } from "../tour.service";
 
 describe("AddTourComponent", () => {
-    let component: AddTourComponent;
-    let fixture: ComponentFixture<AddTourComponent>;
+  let component: AddTourComponent;
+  let fixture: ComponentFixture<AddTourComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            imports: [
-                RouterTestingModule,
-                FormsModule,
-                ReactiveFormsModule,
-                HttpClientTestingModule,
-            ],
-            declarations: [AddTourComponent],
-            providers: [TourService],
-        }).compileComponents();
-    }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+      ],
+      declarations: [AddTourComponent],
+      providers: [TourService],
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(AddTourComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AddTourComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it("should create", () => {
-        expect(component).toBeTruthy();
-    });
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
 });

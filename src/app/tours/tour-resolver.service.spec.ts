@@ -7,17 +7,17 @@ import { Resolve } from "@angular/router";
 import { TourService } from "./tour.service";
 
 describe("TourResolverService", () => {
-    let service: TourResolverService;
+  let service: TourResolverService;
 
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [RouterTestingModule, HttpClientTestingModule],
-            providers: [TourService, TourResolverService],
-        });
-        service = TestBed.inject(TourResolverService);
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, HttpClientTestingModule],
+      providers: [TourService, TourResolverService],
     });
+    service = TestBed.inject(TourResolverService);
+  });
 
-    it("should be created", () => {
-        expect(service).toBeTruthy();
-    });
+  it("should be created", () => {
+    expect(service).toBeTruthy();
+  });
 });

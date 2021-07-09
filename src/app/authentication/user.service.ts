@@ -3,49 +3,47 @@ import { AjaxService } from "../util/ajax.service";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-    providedIn: "root",
+  providedIn: "root",
 })
 export class UserService {
-    userSubject = new BehaviorSubject(
-        localStorage.getItem("user")
-            ? JSON.parse(localStorage.getItem("user"))
-            : {}
-    );
+  userSubject = new BehaviorSubject(
+    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
+  );
 
-    constructor(private ajaxService: AjaxService) {}
+  constructor(private ajaxService: AjaxService) {}
 
-    getToken() {
-        return localStorage.getItem("token");
-    }
+  getToken() {
+    return localStorage.getItem("token");
+  }
 
-    setToken(token) {
-        localStorage.setItem("token", token);
-    }
+  setToken(token) {
+    localStorage.setItem("token", token);
+  }
 
-    setUser(user) {
-        localStorage.setItem("user", JSON.stringify(user));
-        this.userSubject.next(user);
-    }
+  setUser(user) {
+    localStorage.setItem("user", JSON.stringify(user));
+    this.userSubject.next(user);
+  }
 
-    getUser() {
-        return this.userSubject;
-    }
+  getUser() {
+    return this.userSubject;
+  }
 
-    getUserSnapshot() {
-        return localStorage.getItem("user")
-            ? JSON.parse(localStorage.getItem("user"))
-            : {};
-    }
+  getUserSnapshot() {
+    return localStorage.getItem("user")
+      ? JSON.parse(localStorage.getItem("user"))
+      : {};
+  }
 
-    isUserAuthenticated() {
-        return this.getToken() ? true : false;
-    }
+  isUserAuthenticated() {
+    return this.getToken() ? true : false;
+  }
 
-    logoutUser() {
-        return this.ajaxService.ajaxGetCall("regLogin/logout");
-    }
+  logoutUser() {
+    return this.ajaxService.ajaxGetCall("regLogin/logout");
+  }
 
-    loginUser(loginDetails) {
-        return this.ajaxService.ajaxPostCall("regLogin/login", loginDetails);
-    }
+  loginUser(loginDetails) {
+    return this.ajaxService.ajaxPostCall("regLogin/login", loginDetails);
+  }
 }

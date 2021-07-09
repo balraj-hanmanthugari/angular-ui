@@ -5,17 +5,17 @@ import { AjaxService } from "../util/ajax.service";
 import { TourPackagesService } from "./tour-packages.service";
 
 describe("TourPackagesService", () => {
-    let service: TourPackagesService;
+  let service: TourPackagesService;
 
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [TourPackagesService],
-        });
-        service = TestBed.inject(TourPackagesService);
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [TourPackagesService],
     });
+    service = TestBed.inject(TourPackagesService);
+  });
 
-    it("should be created", () => {
-        expect(service).toBeTruthy();
-    });
+  it("should be created", () => {
+    expect(service).toBeTruthy();
+  });
 });

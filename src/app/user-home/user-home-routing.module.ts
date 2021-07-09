@@ -3,14 +3,14 @@ import { Routes, RouterModule } from "@angular/router";
 import { UserHomeComponent } from "./user-home.component";
 
 const routes: Routes = [
-    {
-        path: "",
-        component: UserHomeComponent,
-    },
+  {
+    path: "",
+    component: UserHomeComponent,
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class UserHomeRoutingModule {}

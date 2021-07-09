@@ -8,14 +8,14 @@ import { AllTourPackagesComponent } from "./all-tour-packages/all-tour-packages.
 import { TourPackagesService } from "./../tour-packages/tour-packages.service";
 
 @NgModule({
-    declarations: [AllTourPackagesComponent],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        TourPackagesRoutingModule,
-        MaterialModule,
-    ],
-    providers: [TourPackagesService],
+  declarations: [AllTourPackagesComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TourPackagesRoutingModule,
+    MaterialModule,
+  ],
+  providers: [TourPackagesService],
 })
 export class TourPackagesModule {}

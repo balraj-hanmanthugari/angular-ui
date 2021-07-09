@@ -5,22 +5,22 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { RegistrationPreviewComponent } from "./registration-preview/registration-preview.component";
 
 const routes: Routes = [
-    {
-        path: "login",
-        component: LoginComponent,
-    },
-    {
-        path: "registration",
-        component: RegistrationComponent,
-    },
-    {
-        path: "registration-preview",
-        component: RegistrationPreviewComponent,
-    },
+  {
+    path: "login",
+    component: LoginComponent,
+  },
+  {
+    path: "registration",
+    component: RegistrationComponent,
+  },
+  {
+    path: "registration-preview",
+    component: RegistrationPreviewComponent,
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class AuthenticationRoutingModule {}

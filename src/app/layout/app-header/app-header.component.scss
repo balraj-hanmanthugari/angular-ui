@@ -1,21 +1,21 @@
 .app-header-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	padding: 15px;
-	border-bottom: 1px solid #CCC;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
 }
 .app-title {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 .app-user-info {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	div {
-		margin-left: 15px;
-	}
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  div {
+    margin-left: 15px;
+  }
 }

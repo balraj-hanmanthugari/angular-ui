@@ -1,39 +1,39 @@
 @import "./../../global-styles";
 
 .registration-container {
+  @include flex-mixin(column);
+  align-items: center;
+
+  h3 {
+    text-align: center;
+  }
+
+  .form-group {
     @include flex-mixin(column);
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
 
-    h3 {
-        text-align: center;
-    }
+  label {
+    width: 250px;
+    margin-bottom: 5px;
+  }
 
-    .form-group {
-        @include flex-mixin(column);
-        align-items: flex-start;
-        flex-wrap: wrap;
-        margin-bottom: 15px;
-    }
+  input {
+    width: 250px;
+    height: 20px;
+    margin-bottom: 5px;
+  }
 
-    label {
-        width: 250px;
-        margin-bottom: 5px;
-    }
+  .form-control-feedback {
+    font-size: 14px;
+    color: red;
+    width: 250px;
+  }
 
-    input {
-        width: 250px;
-        height: 20px;
-        margin-bottom: 5px;
-    }
-
-    .form-control-feedback {
-        font-size: 14px;
-        color: red;
-        width: 250px;
-    }
-
-    .btn-container {
-        @include flex-mixin(row);
-        justify-content: flex-end;
-    }
+  .btn-container {
+    @include flex-mixin(row);
+    justify-content: flex-end;
+  }
 }

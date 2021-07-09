@@ -1,20 +1,29 @@
 <div *ngFor="let tourPackage of tourPackages">
-    <header>{{tourPackage.name}}</header>
-    <section>
-        <div class="locations-div">
-            <span class="location-span">Locations: {{tourPackage.location.address}}</span>
-        </div>
-        <div class="duration-div">
-            <span class="duration-span">Duration: {{tourPackage.duration}} Days</span>
-            <span>Max People: {{tourPackage.maxGroupSize}}</span>
-        </div>
-        <div class="ratings-div">
-            <span class="rating-span">Ratings Average: {{tourPackage.ratingAverage}}</span>
-            <span>Number of Reviews: {{tourPackage.reviewQuantity/tourPackage.ratingAverage}}</span>
-        </div>
-    </section>
-    <footer>
-        <span class="price-span">Price: {{tourPackage.price}}</span>
-        <button mat-button (click)="bookTheTour(tourPackage)">Book</button>
-    </footer>
+  <header>{{ tourPackage.name }}</header>
+  <section>
+    <div class="locations-div">
+      <span class="location-span"
+        >Locations: {{ tourPackage.location.address }}</span
+      >
+    </div>
+    <div class="duration-div">
+      <span class="duration-span"
+        >Duration: {{ tourPackage.duration }} Days</span
+      >
+      <span>Max People: {{ tourPackage.maxGroupSize }}</span>
+    </div>
+    <div class="ratings-div">
+      <span class="rating-span"
+        >Ratings Average: {{ tourPackage.ratingAverage }}</span
+      >
+      <span
+        >Number of Reviews:
+        {{ tourPackage.reviewQuantity / tourPackage.ratingAverage }}</span
+      >
+    </div>
+  </section>
+  <footer>
+    <span class="price-span">Price: {{ tourPackage.price }}</span>
+    <button mat-button (click)="bookTheTour(tourPackage)">Book</button>
+  </footer>
 </div>

@@ -1,16 +1,16 @@
 import { ActionReducerMap, createFeatureSelector } from "@ngrx/store";
 import {
-    AuthUserState,
-    authenticationReducer,
+  AuthUserState,
+  authenticationReducer,
 } from "./authentication/authentication.reducer";
 
 export interface AppState {
-    authUser: AuthUserState;
+  authUser: AuthUserState;
 }
 
 export const appReducer: ActionReducerMap<AppState> = {
-    authUser: authenticationReducer,
+  authUser: authenticationReducer,
 };
 
 export const getAuthenticationState =
-    createFeatureSelector<AuthUserState>("authUser");
+  createFeatureSelector<AuthUserState>("authUser");

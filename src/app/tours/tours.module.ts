@@ -12,15 +12,15 @@ import { TourService } from "./tour.service";
 import { TourResolverService } from "./tour-resolver.service";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        ToursRoutingModule,
-        MaterialModule,
-        SharedModule,
-    ],
-    declarations: [TourListComponent, AddTourComponent],
-    providers: [TourService, TourResolverService],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToursRoutingModule,
+    MaterialModule,
+    SharedModule,
+  ],
+  declarations: [TourListComponent, AddTourComponent],
+  providers: [TourService, TourResolverService],
 })
 export class ToursModule {}

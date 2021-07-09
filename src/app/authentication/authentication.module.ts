@@ -15,19 +15,19 @@ import { StoreModule } from "@ngrx/store";
 import { authenticationReducer } from "./authentication.reducer";
 
 @NgModule({
-    declarations: [
-        LoginComponent,
-        RegistrationComponent,
-        RegistrationPreviewComponent,
-    ],
-    imports: [
-        FormsModule,
-        MaterialModule,
-        CommonModule,
-        StoreModule.forRoot({ reducer: authenticationReducer }),
-        SharedModule,
-        AuthenticationRoutingModule,
-    ],
-    providers: [AuthenticationService],
+  declarations: [
+    LoginComponent,
+    RegistrationComponent,
+    RegistrationPreviewComponent,
+  ],
+  imports: [
+    FormsModule,
+    MaterialModule,
+    CommonModule,
+    StoreModule.forRoot({ reducer: authenticationReducer }),
+    SharedModule,
+    AuthenticationRoutingModule,
+  ],
+  providers: [AuthenticationService],
 })
 export class AuthenticationModule {}

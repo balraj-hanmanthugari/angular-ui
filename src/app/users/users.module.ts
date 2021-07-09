@@ -10,15 +10,15 @@ import { AddUserComponent } from "./add-user/add-user.component";
 import { UsersService } from "./users.service";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        UsersRoutingModule,
-        MaterialModule,
-        SharedModule,
-    ],
-    declarations: [UserListComponent, AddUserComponent],
-    providers: [UsersService],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UsersRoutingModule,
+    MaterialModule,
+    SharedModule,
+  ],
+  declarations: [UserListComponent, AddUserComponent],
+  providers: [UsersService],
 })
 export class UsersModule {}

@@ -10,15 +10,15 @@ import { SharedModule } from "./../shared/shared.module";
 import { LocationService } from "./location.service";
 
 @NgModule({
-    declarations: [AddLocationComponent, LocationListComponent],
-    imports: [
-        CommonModule,
-        LocationsRoutingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MaterialModule,
-        SharedModule,
-    ],
-    providers: [LocationService],
+  declarations: [AddLocationComponent, LocationListComponent],
+  imports: [
+    CommonModule,
+    LocationsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    SharedModule,
+  ],
+  providers: [LocationService],
 })
 export class LocationsModule {}

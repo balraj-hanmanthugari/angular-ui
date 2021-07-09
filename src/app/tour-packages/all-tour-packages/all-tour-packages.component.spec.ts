@@ -7,24 +7,24 @@ import { AllTourPackagesComponent } from "./all-tour-packages.component";
 import { TourPackagesService } from "./../tour-packages.service";
 
 describe("AllTourPackagesComponent", () => {
-    let component: AllTourPackagesComponent;
-    let fixture: ComponentFixture<AllTourPackagesComponent>;
+  let component: AllTourPackagesComponent;
+  let fixture: ComponentFixture<AllTourPackagesComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            imports: [RouterTestingModule, HttpClientTestingModule],
-            declarations: [AllTourPackagesComponent],
-            providers: [TourPackagesService],
-        }).compileComponents();
-    }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule, HttpClientTestingModule],
+      declarations: [AllTourPackagesComponent],
+      providers: [TourPackagesService],
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(AllTourPackagesComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AllTourPackagesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it("should create", () => {
-        expect(component).toBeTruthy();
-    });
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
 });

@@ -1,28 +1,28 @@
 @import "./../../global-styles";
 
 .registration-preview-container {
-    @include flex-mixin(column);
-    align-items: center;
+  @include flex-mixin(column);
+  align-items: center;
 
-    .form-control {
-        @include flex-mixin(row);
-        justify-content: space-between;
-        margin-bottom: 15px;
-    }
+  .form-control {
+    @include flex-mixin(row);
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
 
-    .form-control-label {
-        text-align: right;
-        margin-right: 5px;
-        width: 125px;
-    }
+  .form-control-label {
+    text-align: right;
+    margin-right: 5px;
+    width: 125px;
+  }
 
-    .form-control-display {
-        text-align: left;
-        width: 150px;
-    }
+  .form-control-display {
+    text-align: left;
+    width: 150px;
+  }
 
-    .btn-container {
-        @include flex-mixin(row);
-        justify-content: flex-end;
-    }
+  .btn-container {
+    @include flex-mixin(row);
+    justify-content: flex-end;
+  }
 }

@@ -9,29 +9,29 @@ import { AddLocationComponent } from "./add-location.component";
 import { LocationService } from "../location.service";
 
 describe("AddLocationComponent", () => {
-    let component: AddLocationComponent;
-    let fixture: ComponentFixture<AddLocationComponent>;
+  let component: AddLocationComponent;
+  let fixture: ComponentFixture<AddLocationComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            imports: [
-                RouterTestingModule,
-                FormsModule,
-                ReactiveFormsModule,
-                HttpClientTestingModule,
-            ],
-            declarations: [AddLocationComponent],
-            providers: [LocationService],
-        }).compileComponents();
-    }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+      ],
+      declarations: [AddLocationComponent],
+      providers: [LocationService],
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(AddLocationComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AddLocationComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it("should create", () => {
-        expect(component).toBeTruthy();
-    });
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
 });

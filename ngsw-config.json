@@ -14,7 +14,8 @@
           "/*.js"
         ]
       }
-    }, {
+    },
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
@@ -26,20 +27,23 @@
       }
     }
   ],
-  "dataGroups": [{
-    "name": "dataGroup1",
-    "urls": ["/users"],
-    "cacheConfig": {
-      "maxSize": 50,
-      "maxAge": "3d12h",
-      "strategy": "freshness"
+  "dataGroups": [
+    {
+      "name": "dataGroup1",
+      "urls": ["/users"],
+      "cacheConfig": {
+        "maxSize": 50,
+        "maxAge": "3d12h",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "dataGroup2",
+      "urls": ["/api/user"],
+      "cacheConfig": {
+        "maxSize": 40,
+        "maxAge": "3d12h"
+      }
     }
-  }, {
-    "name": "dataGroup2",
-    "urls": ["/api/user"],
-    "cacheConfig": {
-      "maxSize": 40,
-      "maxAge": "3d12h"
-    }
-  }]
+  ]
 }

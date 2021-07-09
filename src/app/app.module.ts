@@ -18,26 +18,26 @@ import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 
 @NgModule({
-    declarations: [AppComponent, AppHeaderComponent, AppMenuComponent],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        SharedModule,
-        HttpClientModule,
-        AppRoutingModule,
-        ServiceWorkerModule.register("ngsw-worker.js", {
-            enabled: environment.production,
-        }),
-    ],
-    exports: [],
-    providers: [
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: InterceptorService,
-            multi: true,
-        },
-    ],
-    bootstrap: [AppComponent],
+  declarations: [AppComponent, AppHeaderComponent, AppMenuComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    SharedModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register("ngsw-worker.js", {
+      enabled: environment.production,
+    }),
+  ],
+  exports: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

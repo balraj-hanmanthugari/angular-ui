@@ -3,27 +3,27 @@ import { AjaxService } from "./../util/ajax.service";
 
 @Injectable()
 export class UsersService {
-    users = [];
+  users = [];
 
-    constructor(private ajaxService: AjaxService) {}
+  constructor(private ajaxService: AjaxService) {}
 
-    getUsers() {
-        return this.ajaxService.ajaxGetCall("users");
-    }
+  getUsers() {
+    return this.ajaxService.ajaxGetCall("users");
+  }
 
-    getUser(id) {
-        return this.ajaxService.ajaxGetCall("users/" + id);
-    }
+  getUser(id) {
+    return this.ajaxService.ajaxGetCall("users/" + id);
+  }
 
-    addUser(user) {
-        return this.ajaxService.ajaxPostCall("users", user);
-    }
+  addUser(user) {
+    return this.ajaxService.ajaxPostCall("users", user);
+  }
 
-    editUser(user) {
-        return this.ajaxService.ajaxPatchCall("users/" + user.emailId, user);
-    }
+  editUser(user) {
+    return this.ajaxService.ajaxPatchCall("users/" + user.emailId, user);
+  }
 
-    deleteUser(id) {
-        return this.ajaxService.ajaxDeleteCall("users/" + id);
-    }
+  deleteUser(id) {
+    return this.ajaxService.ajaxDeleteCall("users/" + id);
+  }
 }

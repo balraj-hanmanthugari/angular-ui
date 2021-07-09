@@ -9,29 +9,29 @@ import { TourService } from "../tour.service";
 import { TourListComponent } from "./tour-list.component";
 
 describe("TourListComponent", () => {
-    let component: TourListComponent;
-    let fixture: ComponentFixture<TourListComponent>;
+  let component: TourListComponent;
+  let fixture: ComponentFixture<TourListComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            imports: [
-                RouterTestingModule,
-                FormsModule,
-                ReactiveFormsModule,
-                HttpClientTestingModule,
-            ],
-            declarations: [TourListComponent],
-            providers: [TourService],
-        }).compileComponents();
-    }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+      ],
+      declarations: [TourListComponent],
+      providers: [TourService],
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(TourListComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TourListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    it("should create", () => {
-        expect(component).toBeTruthy();
-    });
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
 });
