@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { AngularGridComponent } from "./angular-grid.component";
-import { AppModule } from "src/app/app.module";
-import { SharedModule } from "../shared.module";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularGridComponent } from './angular-grid.component';
+import { AppModule } from '../app.module';
+import { SharedModule } from '../shared.module';
 
-describe("AngularGridComponent", () => {
+describe('AngularGridComponent', () => {
   let component: AngularGridComponent;
   let fixture: ComponentFixture<AngularGridComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppModule, SharedModule],
-      declarations: [],
+      declarations: []
     }).compileComponents();
   }));
 
@@ -20,7 +20,7 @@ describe("AngularGridComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

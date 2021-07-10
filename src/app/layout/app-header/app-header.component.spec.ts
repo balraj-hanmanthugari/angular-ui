@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { AppHeaderComponent } from "./app-header.component";
-import { AppModule } from "src/app/app.module";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppHeaderComponent } from './app-header.component';
+import { AppModule } from '..../app.module';
 
-describe("AppHeaderComponent", () => {
+describe('AppHeaderComponent', () => {
   let component: AppHeaderComponent;
   let fixture: ComponentFixture<AppHeaderComponent>;
 
@@ -10,7 +10,7 @@ describe("AppHeaderComponent", () => {
     TestBed.configureTestingModule({
       imports: [AppModule],
       declarations: [],
-      providers: [],
+      providers: []
     }).compileComponents();
   }));
 
@@ -20,7 +20,7 @@ describe("AppHeaderComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
