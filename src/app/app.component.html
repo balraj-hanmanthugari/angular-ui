@@ -1,8 +1,9 @@
 <div class="app-viewport">
   <!-- Application Header -->
-  <app-header></app-header>
+  <router-outlet name="app-header"></router-outlet>
   <!-- Application Menu -->
-  <app-menu></app-menu>
+  <!-- <app-menu></app-menu> -->
+  <router-outlet name="app-menu"></router-outlet>
   <!-- Application Body -->
   <div class="app-body">
     <router-outlet></router-outlet>

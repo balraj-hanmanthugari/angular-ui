@@ -1,39 +1,93 @@
-import { Injectable } from "@angular/core";
-import { AjaxService } from "./../util/ajax.service";
+import { Injectable } from '@angular/core';
+import { AjaxService } from './../util/ajax.service';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root'
 })
 export class MenuService {
-  currentMenu: any = [];
+  menu = [
+    {
+      name: 'Home',
+      path: '/home',
+      roles: ['admin', 'guide', 'user'],
+      childMenus: [
+        {
+          name: 'home',
+          path: '/home'
+        }
+      ]
+    },
+    {
+      name: 'Tour Packages',
+      path: '/tour-packages',
+      roles: ['admin', 'guide', 'user'],
+      childMenus: [
+        {
+          name: 'All Tour Packages',
+          path: '/tour-packages/all'
+        }
+      ]
+    },
+    {
+      name: 'Users',
+      path: '/users',
+      roles: ['admin'],
+      childMenus: [
+        {
+          name: 'User Creation',
+          path: '/users/add'
+        },
+        {
+          name: 'User List',
+          path: '/users/list'
+        }
+      ]
+    },
+    {
+      name: 'Tours',
+      path: '/tours',
+      roles: ['admin'],
+      childMenus: [
+        {
+          name: 'Tour Creation',
+          path: '/tours/add'
+        },
+        {
+          name: 'Tour List',
+          path: '/tours/list'
+        }
+      ]
+    },
+    {
+      name: 'Locations',
+      path: '/locations',
+      roles: ['admin'],
+      childMenus: [
+        {
+          name: 'Location Creation',
+          path: '/locations/add'
+        },
+        {
+          name: 'Location List',
+          path: '/locations/list'
+        }
+      ]
+    }
+  ];
+  currentMenu: any;
 
   constructor(private ajaxService: AjaxService) {}
 
-  getAllMenu() {
-    return this.ajaxService.ajaxJsonCall("./assets/data/menu-config.json");
-  }
-
-  getMenu(userRole) {
-    let menus = JSON.parse(localStorage.getItem("menu"));
-    if (!menus) {
-      return;
-    }
-    console.log("menus: " + menus);
-    return menus.filter((item) => {
-      if (item.roles.indexOf(userRole) !== -1) {
-        return true;
-      }
-      return false;
+  getMenuItem(userRole) {
+    return this.menu.find(item => {
+      return item.roles.indexOf(userRole) !== -1;
     });
   }
 
   getSubMenu(menuItem) {
-    let menus = JSON.parse(localStorage.getItem("menu"));
-    this.currentMenu = menus.filter((item) => {
-      if (item.name == menuItem.name) {
-        return item;
-      }
+    this.currentMenu = this.menu.find(item => {
+      return item.name == menuItem.name;
     });
-    return this.currentMenu[0].childMenus;
+    return this.currentMenu.childMenus;
   }
 }

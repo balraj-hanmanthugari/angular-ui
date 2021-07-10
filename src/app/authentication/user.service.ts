@@ -1,27 +1,21 @@
-import { Injectable } from "@angular/core";
-import { AjaxService } from "../util/ajax.service";
-import { BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { AjaxService } from '../util/ajax.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root'
 })
 export class UserService {
-  userSubject = new BehaviorSubject(
-    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
-  );
+  user: any = {};
+  userSubject = new BehaviorSubject({});
 
-  constructor(private ajaxService: AjaxService) {}
-
-  getToken() {
-    return localStorage.getItem("token");
+  constructor(private ajaxService: AjaxService) {
+    this.setUser();
   }
 
-  setToken(token) {
-    localStorage.setItem("token", token);
-  }
-
-  setUser(user) {
-    localStorage.setItem("user", JSON.stringify(user));
+  setUser(user = {}, token = '') {
+    this.user = { ...user, token };
+    localStorage.setItem('user', JSON.stringify(this.user));
     this.userSubject.next(user);
   }
 
@@ -29,21 +23,15 @@ export class UserService {
     return this.userSubject;
   }
 
-  getUserSnapshot() {
-    return localStorage.getItem("user")
-      ? JSON.parse(localStorage.getItem("user"))
-      : {};
-  }
-
   isUserAuthenticated() {
-    return this.getToken() ? true : false;
-  }
-
-  logoutUser() {
-    return this.ajaxService.ajaxGetCall("regLogin/logout");
+    return this.user && this.user.token ? true : false;
   }
 
   loginUser(loginDetails) {
-    return this.ajaxService.ajaxPostCall("regLogin/login", loginDetails);
+    return this.ajaxService.ajaxPostCall('regLogin/login', loginDetails);
+  }
+
+  logoutUser() {
+    return this.ajaxService.ajaxGetCall('regLogin/logout');
   }
 }
