@@ -8,38 +8,27 @@
     "test": "ng test --code-coverage --watch=false",
     "e2e": "ng e2e",
     "start": "ng serve",
-    "pretty": "prettier --write --tab-width 4 \"src/**/*.ts\"",
-    "pre-commit": "lint-staged"
-  },
-  "pre-commit": [
-    "pre-commit"
-  ],
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+    "pretty": "prettier --write --tab-width 4 \"src/**/*.ts\""
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^9.1.13",
-    "@angular/cdk": "^9.2.4",
-    "@angular/common": "^9.1.13",
-    "@angular/compiler": "^9.1.13",
-    "@angular/core": "^9.1.13",
-    "@angular/forms": "^9.1.13",
-    "@angular/material": "^9.2.4",
-    "@angular/platform-browser": "^9.1.13",
-    "@angular/platform-browser-dynamic": "^9.1.13",
-    "@angular/router": "^9.1.13",
-    "@angular/service-worker": "^9.1.13",
-    "@ngrx/store": "^9.2.1",
+    "@angular/animations": "^12.1.1",
+    "@angular/cdk": "^12.1.1",
+    "@angular/common": "^12.1.1",
+    "@angular/compiler": "^12.1.1",
+    "@angular/core": "^12.1.1",
+    "@angular/forms": "^12.1.1",
+    "@angular/material": "^12.1.1",
+    "@angular/platform-browser": "^12.1.1",
+    "@angular/platform-browser-dynamic": "^12.1.1",
+    "@angular/router": "^12.1.1",
+    "@angular/service-worker": "^12.1.1",
+    "@ngrx/store": "^12.2.0",
     "angular": "^1.8.2",
-    "core-js": "^3.12.1",
-    "express": "^4.17.1",
-    "rxjs": "^6.6.7",
-    "tslib": "^1.14.1",
-    "zone.js": "^0.10.3"
+    "core-js": "^3.15.2",
+    "rxjs": "^7.2.0",
+    "tslib": "^2.3.0",
+    "zone.js": "^0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.8",
@@ -57,8 +46,6 @@
     "karma-coverage-istanbul-reporter": "~2.1.1",
     "karma-jasmine": "~3.1.1",
     "karma-jasmine-html-reporter": "^1.6.0",
-    "lint-staged": "^11.0.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^2.3.2",
     "protractor": "^5.4.4",
     "ts-node": "~8.6.2",
