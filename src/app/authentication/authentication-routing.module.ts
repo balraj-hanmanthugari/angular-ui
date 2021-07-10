@@ -5,6 +5,7 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { RegistrationPreviewComponent } from "./registration-preview/registration-preview.component";
 
 const routes: Routes = [
+  { path: "", redirectTo: "l", pathMatch: "full" },
   {
     path: "login",
     component: LoginComponent,
@@ -16,7 +17,7 @@ const routes: Routes = [
   {
     path: "registration-preview",
     component: RegistrationPreviewComponent,
-  },
+  }
 ];
 
 @NgModule({

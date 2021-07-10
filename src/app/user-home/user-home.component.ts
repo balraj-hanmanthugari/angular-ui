@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { UserHomeService } from "./user-home.service";
-import { UserService } from "src/app/authentication/user.service";
+import { Component, OnInit } from '@angular/core';
+import { UserHomeService } from './user-home.service';
+import { UserService } from '../authentication/user.service';
 
 @Component({
-  selector: "app-user-home",
-  templateUrl: "./user-home.component.html",
-  styleUrls: ["./user-home.component.scss"],
+  selector: 'app-user-home',
+  templateUrl: './user-home.component.html',
+  styleUrls: ['./user-home.component.scss']
 })
 export class UserHomeComponent implements OnInit {
   bookedTours: any = [];
@@ -21,7 +21,7 @@ export class UserHomeComponent implements OnInit {
       return false;
     }
     this.homeService.getBookedTours(user._id).subscribe((response: any) => {
-      if (response.status === "success" && response.data.bookings) {
+      if (response.status === 'success' && response.data.bookings) {
         this.bookedTours = response.data.bookings;
       }
     });
@@ -32,7 +32,7 @@ export class UserHomeComponent implements OnInit {
     this.homeService
       .cancelTheTour(user._id, booking.bookings[0]._id)
       .subscribe((response: any) => {
-        if (response.status === "success" && response.data.booking) {
+        if (response.status === 'success' && response.data.booking) {
           this.getBookedTours();
         }
       });
@@ -43,7 +43,7 @@ export class UserHomeComponent implements OnInit {
 
     let rating: any = {
       tour: tour._id,
-      user: user._id,
+      user: user._id
     };
 
     if (tour.reviews[0]) {
@@ -53,7 +53,7 @@ export class UserHomeComponent implements OnInit {
       this.homeService
         .updateTheTourRating(rating)
         .subscribe((response: any) => {
-          if (response.status === "success" && response.data.review) {
+          if (response.status === 'success' && response.data.review) {
             this.getBookedTours();
           }
         });
@@ -63,7 +63,7 @@ export class UserHomeComponent implements OnInit {
       this.homeService
         .createTheTourRating(rating)
         .subscribe((response: any) => {
-          if (response.status === "success" && response.data.review) {
+          if (response.status === 'success' && response.data.review) {
             this.getBookedTours();
           }
         });
