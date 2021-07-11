@@ -10,15 +10,13 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppHeaderComponent } from './layout/app-header/app-header.component';
-import { AppMenuComponent } from './layout/app-menu/app-menu.component';
 
 import { InterceptorService } from './util/interceptor.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, AppHeaderComponent, AppMenuComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

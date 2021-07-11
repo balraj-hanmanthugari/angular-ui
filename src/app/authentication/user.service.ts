@@ -6,25 +6,27 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  user: any = {};
-  userSubject = new BehaviorSubject({});
+  authData: any = {};
+  user = new BehaviorSubject({});
 
   constructor(private ajaxService: AjaxService) {
-    this.setUser();
+    this.authData = sessionStorage.getItem('authData')
+      ? JSON.parse(sessionStorage.getItem('authData'))
+      : {};
   }
 
-  setUser(user = {}, token = '') {
-    this.user = { ...user, token };
-    localStorage.setItem('user', JSON.stringify(this.user));
-    this.userSubject.next(user);
+  setAuthData(data: any) {
+    this.authData = data;
+    sessionStorage.setItem('authData', JSON.stringify(data));
+    this.user.next(data.user);
   }
 
   getUser() {
-    return this.userSubject;
+    return this.user;
   }
 
   isUserAuthenticated() {
-    return this.user && this.user.token ? true : false;
+    return this.authData && this.authData.token ? true : false;
   }
 
   loginUser(loginDetails) {
@@ -32,6 +34,8 @@ export class UserService {
   }
 
   logoutUser() {
+    this.authData = {};
+    sessionStorage.removeItem('authData');
     return this.ajaxService.ajaxGetCall('regLogin/logout');
   }
 }

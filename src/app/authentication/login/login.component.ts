@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   loginUser() {
     this.userService.loginUser(this.loginDetails).subscribe((response: any) => {
       if (response.status === 'success' && response.data.token) {
-        this.userService.setUser(response.data.user, response.data.token);
+        this.userService.setUser(response.data);
         this.isUserExists = false;
         this.router.navigate(['home']);
       } else {

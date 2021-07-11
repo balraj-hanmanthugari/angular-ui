@@ -1,8 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthenticationGuard } from './authentication/authentication.guard';
-import { AppHeaderComponent } from './layout/app-header/app-header.component';
-import { AppMenuComponent } from './layout/app-menu/app-menu.component';
 
 const routes: Routes = [
   {
@@ -46,16 +44,6 @@ const routes: Routes = [
     path: '',
     redirectTo: 'authenticate',
     pathMatch: 'full'
-  },
-  {
-    path: '',
-    outlet: 'app-header',
-    component: AppHeaderComponent
-  },
-  {
-    path: '',
-    outlet: 'app-menu',
-    component: AppMenuComponent
   }
 ];
 

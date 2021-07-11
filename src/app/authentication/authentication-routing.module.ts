@@ -18,6 +18,11 @@ const routes: Routes = [
   {
     path: 'registration-preview',
     component: RegistrationPreviewComponent
+  },
+  {
+    path: '',
+    outlet: 'app-header',
+    component: AppHeaderComponent
   }
 ];
 
