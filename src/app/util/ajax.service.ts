@@ -1,12 +1,13 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { forkJoin } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { forkJoin } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root'
 })
 export class AjaxService {
-  private UrlOrigin = "http://localhost:3000/";
+  private UrlOrigin = environment.baseURL;
 
   constructor(private http: HttpClient) {}
 
@@ -32,9 +33,5 @@ export class AjaxService {
 
   ajaxDeleteCall(url) {
     return this.http.delete(this.UrlOrigin + url);
-  }
-
-  ajaxJsonCall(url) {
-    return this.http.get(url);
   }
 }
