@@ -9,6 +9,7 @@ import { UserService } from '../../authentication/user.service';
   styleUrls: ['./all-tour-packages.component.scss']
 })
 export class AllTourPackagesComponent implements OnInit {
+  user: any;
   tourPackages: any = [];
 
   constructor(
@@ -37,13 +38,13 @@ export class AllTourPackagesComponent implements OnInit {
   }
 
   bookTheTour(tour) {
-    let user = this.userService.getUserSnapshot();
     let booking = {
       tour: tour._id,
-      user: user._id,
+      user: this.user._id,
       price: tour.price,
       paid: true
     };
+
     this.tourPackagesService.bookTheTour(booking).subscribe((response: any) => {
       if (response.status === 'success' && response.data.booking) {
         this.router.navigate(['home']);
@@ -52,6 +53,9 @@ export class AllTourPackagesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTours();
+    this.userService.getUser().subscribe(data => {
+      this.user = data;
+      this.getTours();
+    });
   }
 }

@@ -1,4 +1,4 @@
-<div class="app-menu-container" *ngIf="isUserLoggedIn()">
+<div class="app-menu-container">
   <div *ngFor="let menuItem of menu">
     <button mat-button [matMenuTriggerFor]="afterMenu">
       {{ menuItem.name }}

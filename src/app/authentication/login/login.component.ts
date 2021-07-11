@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { UserService } from '../../util/user.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   loginUser() {
     this.userService.loginUser(this.loginDetails).subscribe((response: any) => {
       if (response.status === 'success' && response.data.token) {
-        this.userService.setUser(response.data);
+        this.userService.setAuthData(response.data);
         this.isUserExists = false;
         this.router.navigate(['home']);
       } else {

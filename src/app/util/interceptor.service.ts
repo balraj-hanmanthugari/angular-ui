@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
-import { HttpInterceptor } from "@angular/common/http";
-import { map, catchError } from "rxjs/operators";
-import { throwError } from "rxjs";
-import { UserService } from "../authentication/user.service";
-import { MatDialog } from "@angular/material/dialog";
-import { AngularPopupComponent } from "../shared/angular-popup/angular-popup.component";
+import { Injectable } from '@angular/core';
+import { HttpInterceptor } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { AngularPopupComponent } from '../shared/angular-popup/angular-popup.component';
+import { UserService } from './user.service';
 
 @Injectable()
 export class InterceptorService implements HttpInterceptor {
@@ -12,35 +12,35 @@ export class InterceptorService implements HttpInterceptor {
 
   intercept(req, next) {
     let dialog = this.dialog.open(AngularPopupComponent, {
-      width: "400px",
+      width: '400px',
       data: {
-        name: "spinner",
-        message: "",
-      },
+        name: 'spinner',
+        message: ''
+      }
     });
 
     let headers = {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      "Access-Control-Allow-Origin": "*",
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'Access-Control-Allow-Origin': '*'
     };
 
-    if (req.url.search("regLogin") === -1) {
-      headers["Authorization"] = "Bearer " + this.userService.getToken();
+    if (req.url.search('regLogin') === -1) {
+      headers['Authorization'] = 'Bearer ' + this.userService.user.token;
     }
 
     let reqCopy = req.clone({
-      setHeaders: headers,
+      setHeaders: headers
     });
 
     return next.handle(reqCopy).pipe(
-      map((event) => {
+      map(event => {
         setTimeout(() => {
           dialog.close();
         }, 1000);
         return event;
       }),
-      catchError((error) => {
+      catchError(error => {
         dialog.close();
         return throwError(error);
       })

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from './../menu.service';
-import { UserService } from '../../authentication/user.service';
+import { UserService } from '../../../util/user.service';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-menu',
@@ -30,9 +30,5 @@ export class AppMenuComponent implements OnInit {
 
   getSubMenu(menuItem) {
     this.subMenu = this.menuService.getSubMenu(menuItem);
-  }
-
-  isUserLoggedIn() {
-    return this.userService.isUserAuthenticated();
   }
 }

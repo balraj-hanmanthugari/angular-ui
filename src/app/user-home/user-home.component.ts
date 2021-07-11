@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserHomeService } from './user-home.service';
-import { UserService } from '../authentication/user.service';
+import { UserService } from '../util/user.service';
 
 @Component({
   selector: 'app-user-home',
@@ -8,6 +8,7 @@ import { UserService } from '../authentication/user.service';
   styleUrls: ['./user-home.component.scss']
 })
 export class UserHomeComponent implements OnInit {
+  user: any;
   bookedTours: any = [];
 
   constructor(
@@ -16,21 +17,18 @@ export class UserHomeComponent implements OnInit {
   ) {}
 
   getBookedTours() {
-    let user = this.userService.getUserSnapshot();
-    if (!user || !user._id) {
-      return false;
-    }
-    this.homeService.getBookedTours(user._id).subscribe((response: any) => {
-      if (response.status === 'success' && response.data.bookings) {
-        this.bookedTours = response.data.bookings;
-      }
-    });
+    this.homeService
+      .getBookedTours(this.user._id)
+      .subscribe((response: any) => {
+        if (response.status === 'success' && response.data.bookings) {
+          this.bookedTours = response.data.bookings;
+        }
+      });
   }
 
   cancelTheTour(booking) {
-    let user = this.userService.getUserSnapshot();
     this.homeService
-      .cancelTheTour(user._id, booking.bookings[0]._id)
+      .cancelTheTour(this.user._id, booking.bookings[0]._id)
       .subscribe((response: any) => {
         if (response.status === 'success' && response.data.booking) {
           this.getBookedTours();
@@ -39,11 +37,9 @@ export class UserHomeComponent implements OnInit {
   }
 
   rateTheTour(tour) {
-    let user = this.userService.getUserSnapshot();
-
     let rating: any = {
       tour: tour._id,
-      user: user._id
+      user: this.user._id
     };
 
     if (tour.reviews[0]) {
@@ -71,6 +67,9 @@ export class UserHomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getBookedTours();
+    this.userService.getUser().subscribe(data => {
+      this.user = data;
+      this.getBookedTours();
+    });
   }
 }
