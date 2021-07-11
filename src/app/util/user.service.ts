@@ -10,9 +10,12 @@ export class UserService {
   user = new BehaviorSubject({});
 
   constructor(private ajaxService: AjaxService) {
-    this.authData = sessionStorage.getItem('authData')
+    let authData = sessionStorage.getItem('authData')
       ? JSON.parse(sessionStorage.getItem('authData'))
       : {};
+    if (authData.token) {
+      this.setAuthData(authData);
+    }
   }
 
   setAuthData(data: any) {

@@ -26,7 +26,7 @@ export class InterceptorService implements HttpInterceptor {
     };
 
     if (req.url.search('regLogin') === -1) {
-      headers['Authorization'] = 'Bearer ' + this.userService.user.token;
+      headers['Authorization'] = 'Bearer ' + this.userService.authData.token;
     }
 
     let reqCopy = req.clone({

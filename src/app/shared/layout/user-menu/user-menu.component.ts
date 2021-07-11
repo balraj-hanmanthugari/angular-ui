@@ -7,7 +7,7 @@ import { MenuService } from '../user-menu.service';
   templateUrl: './user-menu.component.html',
   styleUrls: ['./user-menu.component.scss']
 })
-export class AppMenuComponent implements OnInit {
+export class UserMenuComponent implements OnInit {
   menu: any;
   subMenu: any;
   menuItem: any;

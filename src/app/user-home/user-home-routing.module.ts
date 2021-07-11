@@ -5,19 +5,18 @@ import { UserMenuComponent } from '../shared/layout/user-menu/user-menu.componen
 import { UserHomeComponent } from './user-home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'user-home', pathMatch: 'full' },
   {
-    path: 'user-home',
+    path: '',
     component: UserHomeComponent
   },
   {
     path: '',
-    outlet: 'app-header',
+    outlet: 'header',
     component: UserHeaderComponent
   },
   {
     path: '',
-    outlet: 'app-menu',
+    outlet: 'menu',
     component: UserMenuComponent
   }
 ];

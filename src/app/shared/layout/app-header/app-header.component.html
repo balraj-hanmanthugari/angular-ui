@@ -1,14 +1,10 @@
 <div class="app-header-container">
   <div class="app-title">
-    <button mat-button>Angular Learning</button>
+    <button mat-button>Tours</button>
   </div>
-  <div class="app-user-info" *ngIf="isUserLoggedIn()">
-    <button mat-button (click)="navigateToContact()">Contact</button>
-    <button mat-button (click)="openUserInfo()">{{ user.firstName }}</button>
-    <button mat-button (click)="logoutUser()">Logout</button>
-  </div>
-  <div class="app-user-info" *ngIf="!isUserLoggedIn()">
+  <div class="app-user-info">
     <button mat-button (click)="navigateToSignUp()">Sign Up</button>
     <button mat-button (click)="navigateToSignIn()">Sign In</button>
+    <button mat-button (click)="navigateToContact()">Contact</button>
   </div>
 </div>

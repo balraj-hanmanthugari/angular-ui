@@ -12,15 +12,7 @@ export class AppHeaderComponent implements OnInit {
 
   constructor(private router: Router, private userService: UserService) {}
 
-  ngOnInit(): void {
-    this.getUser();
-  }
-
-  getUser() {
-    this.userService.getUser().subscribe(user => {
-      this.user = user;
-    });
-  }
+  ngOnInit(): void {}
 
   navigateToSignUp() {
     this.router.navigate(['/authenticate/registration']);
@@ -30,24 +22,8 @@ export class AppHeaderComponent implements OnInit {
     this.router.navigate(['/authenticate/login']);
   }
 
-  openUserInfo() {
-    console.log('User Info is Temporarily Unavailable');
-  }
-
   navigateToContact() {
     console.log('Contact Page is Temporarily Unavailable');
     //this.router.navigate(['/contact']);
-  }
-
-  isUserLoggedIn() {
-    return this.userService.isUserAuthenticated();
-  }
-
-  logoutUser() {
-    this.userService.logoutUser().subscribe((response: any) => {
-      if (response.status === 'success') {
-        this.router.navigate(['/authenticate/login']);
-      }
-    });
   }
 }
