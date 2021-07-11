@@ -8,9 +8,7 @@ import { MenuService } from '../user-menu.service';
   styleUrls: ['./user-menu.component.scss']
 })
 export class UserMenuComponent implements OnInit {
-  menu: any;
-  subMenu: any;
-  menuItem: any;
+  userMenu: any;
 
   constructor(
     private menuService: MenuService,
@@ -18,17 +16,8 @@ export class UserMenuComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.menu = this.menuService.menu;
-    this.prepareMenu();
-  }
-
-  prepareMenu() {
-    this.userService.getUser().subscribe((user: any) => {
-      this.menuItem = this.menuService.getMenuItem(user.role);
+    this.userService.getUser().subscribe(user => {
+      this.userMenu = this.menuService.getUserMenu(user.role);
     });
-  }
-
-  getSubMenu(menuItem) {
-    this.subMenu = this.menuService.getSubMenu(menuItem);
   }
 }

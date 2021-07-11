@@ -1,12 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
-import { UsersService } from "./../users.service";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UsersService } from './../users.service';
 
 @Component({
-  selector: "app-user-list",
-  templateUrl: "./user-list.component.html",
-  styleUrls: ["./user-list.component.scss"],
-  providers: [],
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss'],
+  providers: []
 })
 export class UserListComponent implements OnInit {
   @Input() gridConfig: any;
@@ -14,26 +14,26 @@ export class UserListComponent implements OnInit {
   @Output() sendSelectedRows: any = new EventEmitter<any>();
 
   gridConfigOptions: any = {
-    title: "Users",
+    title: 'Users',
     columns: [
       {
-        headerText: "First Name",
-        columnName: "firstName",
+        headerText: 'First Name',
+        columnName: 'firstName'
       },
       {
-        headerText: "Last Name",
-        columnName: "lastName",
+        headerText: 'Last Name',
+        columnName: 'lastName'
       },
       {
-        headerText: "Email Id",
-        columnName: "emailId",
+        headerText: 'Email Id',
+        columnName: 'emailId'
       },
       {
-        headerText: "Role",
-        columnName: "role",
-      },
+        headerText: 'Role',
+        columnName: 'role'
+      }
     ],
-    columnsStrArr: ["select", "firstName", "lastName", "emailId", "role"],
+    columnsStrArr: ['select', 'firstName', 'lastName', 'emailId', 'role']
   };
 
   data: any = [];
@@ -47,22 +47,26 @@ export class UserListComponent implements OnInit {
 
   getUsers() {
     this.usersService.getUsers().subscribe((response: any) => {
-      if (response.status === "success" && response.data.users) {
+      if (response.status === 'success' && response.data.users) {
         this.data = response.data.users;
       }
     });
   }
 
   viewUser(user) {
-    console.log("code for popup view", user);
+    console.log('code for popup view', user);
   }
 
   addUser() {
-    this.router.navigate(["/users/add"]);
+    this.router.navigate(['/users/add']);
   }
 
   editUser() {
-    this.router.navigate(["/users/" + this.selectedGridRows[0].emailId]);
+    if (this.selectedGridRows.length === 1) {
+      this.router.navigate(['/users/' + this.selectedGridRows[0].emailId]);
+    } else {
+      alert('Please select one row');
+    }
   }
 
   deleteUser() {
@@ -70,12 +74,12 @@ export class UserListComponent implements OnInit {
       this.usersService
         .deleteUser(this.selectedGridRows[0]._id)
         .subscribe((response: any) => {
-          if (response.status === "success" && response.data.user) {
+          if (response.status === 'success' && response.data.user) {
             this.getUsers();
           }
         });
     } else {
-      alert("Please select one row");
+      alert('Please select one row');
     }
   }
 

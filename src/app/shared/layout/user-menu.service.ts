@@ -9,85 +9,36 @@ export class MenuService {
     {
       name: 'Home',
       path: '/home',
-      roles: ['admin', 'guide', 'user'],
-      childMenus: [
-        {
-          name: 'home',
-          path: '/home'
-        }
-      ]
+      roles: ['admin', 'guide', 'user']
     },
     {
       name: 'Tour Packages',
       path: '/tour-packages',
-      roles: ['admin', 'guide', 'user'],
-      childMenus: [
-        {
-          name: 'All Tour Packages',
-          path: '/tour-packages/all'
-        }
-      ]
+      roles: ['admin', 'guide', 'user']
     },
     {
       name: 'Users',
       path: '/users',
-      roles: ['admin'],
-      childMenus: [
-        {
-          name: 'User Creation',
-          path: '/users/add'
-        },
-        {
-          name: 'User List',
-          path: '/users/list'
-        }
-      ]
+      roles: ['admin']
     },
     {
       name: 'Tours',
       path: '/tours',
-      roles: ['admin'],
-      childMenus: [
-        {
-          name: 'Tour Creation',
-          path: '/tours/add'
-        },
-        {
-          name: 'Tour List',
-          path: '/tours/list'
-        }
-      ]
+      roles: ['admin']
     },
     {
       name: 'Locations',
       path: '/locations',
-      roles: ['admin'],
-      childMenus: [
-        {
-          name: 'Location Creation',
-          path: '/locations/add'
-        },
-        {
-          name: 'Location List',
-          path: '/locations/list'
-        }
-      ]
+      roles: ['admin']
     }
   ];
   currentMenu: any;
 
   constructor(private ajaxService: AjaxService) {}
 
-  getMenuItem(userRole) {
-    return this.menu.find(item => {
+  getUserMenu(userRole) {
+    return this.menu.filter(item => {
       return item.roles.indexOf(userRole) !== -1;
     });
-  }
-
-  getSubMenu(menuItem) {
-    this.currentMenu = this.menu.find(item => {
-      return item.name == menuItem.name;
-    });
-    return this.currentMenu.childMenus;
   }
 }

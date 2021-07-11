@@ -1,13 +1,7 @@
 <div class="app-menu-container">
-  <div *ngFor="let menuItem of menu">
-    <button mat-button [matMenuTriggerFor]="afterMenu">
+  <div *ngFor="let menuItem of userMenu">
+    <button mat-button routerLink="{{ menuItem.path }}">
       {{ menuItem.name }}
     </button>
-    <mat-menu #afterMenu="matMenu" xPosition="after">
-      <button mat-menu-item *ngFor="let subMenuItem of menuItem.childMenus"
-        routerLink="{{ subMenuItem.path }}">
-        {{ subMenuItem.name }}
-      </button>
-    </mat-menu>
   </div>
 </div>
