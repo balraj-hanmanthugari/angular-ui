@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    outlet: 'aheader',
+    outlet: 'header',
     component: AppHeaderComponent
   }
 ];
