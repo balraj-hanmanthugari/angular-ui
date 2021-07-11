@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../util/user.service';
-import { MenuService } from '../menu.service';
+import { MenuService } from '../user-menu.service';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './app-menu.component.html',
-  styleUrls: ['./app-menu.component.scss']
+  selector: 'app-user-menu',
+  templateUrl: './user-menu.component.html',
+  styleUrls: ['./user-menu.component.scss']
 })
 export class AppMenuComponent implements OnInit {
   menu: any;

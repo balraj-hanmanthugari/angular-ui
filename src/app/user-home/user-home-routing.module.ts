@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppHeaderComponent } from '../shared/layout/app-header/app-header.component';
-import { AppMenuComponent } from '../shared/layout/app-menu/app-menu.component';
+import { UserHeaderComponent } from '../shared/layout/user-header/user-header.component';
+import { UserMenuComponent } from '../shared/layout/user-menu/user-menu.component';
 import { UserHomeComponent } from './user-home.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'user-home', pathMatch: 'full' },
   {
-    path: '',
+    path: 'user-home',
     component: UserHomeComponent
   },
   {
     path: '',
     outlet: 'app-header',
-    component: AppHeaderComponent
+    component: UserHeaderComponent
   },
   {
     path: '',
     outlet: 'app-menu',
-    component: AppMenuComponent
+    component: UserMenuComponent
   }
 ];
 

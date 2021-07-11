@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../../authentication/user.service';
+import { UserService } from '../../../util/user.service';
 
 @Component({
   selector: 'app-header',
@@ -46,7 +46,7 @@ export class AppHeaderComponent implements OnInit {
   logoutUser() {
     this.userService.logoutUser().subscribe((response: any) => {
       if (response.status === 'success') {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/authenticate/login']);
       }
     });
   }

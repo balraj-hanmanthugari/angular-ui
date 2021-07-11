@@ -4,19 +4,24 @@ import { MaterialModule } from './../material/material.module';
 import { AngularPopupComponent } from './angular-popup/angular-popup.component';
 import { AngularGridComponent } from './angular-grid/angular-grid.component';
 import { AppHeaderComponent } from './layout/app-header/app-header.component';
-import { AppMenuComponent } from './layout/app-menu/app-menu.component';
+import { UserMenuComponent } from './layout/user-menu/user-menu.component';
+import { UserHeaderComponent } from './layout/user-header/user-header.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppHeaderComponent,
-    AppMenuComponent,
+    UserHeaderComponent,
+    UserMenuComponent,
     AngularPopupComponent,
-    AngularGridComponent
+    AngularGridComponent,
+    UserHeaderComponent
   ],
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, RouterModule],
   exports: [
     AppHeaderComponent,
-    AppMenuComponent,
+    UserHeaderComponent,
+    UserMenuComponent,
     AngularPopupComponent,
     AngularGridComponent
   ],

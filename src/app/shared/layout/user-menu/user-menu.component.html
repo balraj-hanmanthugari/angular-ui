@@ -4,11 +4,8 @@
       {{ menuItem.name }}
     </button>
     <mat-menu #afterMenu="matMenu" xPosition="after">
-      <button
-        mat-menu-item
-        *ngFor="let subMenuItem of menuItem.childMenus"
-        routerLink="{{ subMenuItem.path }}"
-      >
+      <button mat-menu-item *ngFor="let subMenuItem of menuItem.childMenus"
+        routerLink="{{ subMenuItem.path }}">
         {{ subMenuItem.name }}
       </button>
     </mat-menu>

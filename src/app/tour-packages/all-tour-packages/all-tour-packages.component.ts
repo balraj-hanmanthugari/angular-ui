@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TourPackagesService } from './../tour-packages.service';
-import { UserService } from '../../authentication/user.service';
+import { TourPackagesService } from '../../util/user.service';
 
 @Component({
   selector: 'app-all-tour-packages',
