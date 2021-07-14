@@ -8,7 +8,7 @@
     "test": "ng test --code-coverage --watch=false",
     "e2e": "ng e2e",
     "start": "ng serve",
-    "pretty": "prettier --write --tab-width 4 \"src/**/*.ts\""
+    "prettify": "prettier --write --tab-width 4 \"src/**/*.ts\""
   },
   "private": true,
   "dependencies": {
