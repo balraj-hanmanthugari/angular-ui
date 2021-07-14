@@ -8,6 +8,10 @@ exports.config = {
   specs: ["./src/**/*.e2e-spec.ts"],
   capabilities: {
     browserName: "chrome",
+    chromeOptions: {
+      binary: "node_modules/chromedriver/bin/chromedriver",
+      args: ["--headless", "--no-sandbox", "--disable-dev-shm-usage"] 
+    }
   },
   directConnect: true,
   baseUrl: "http://localhost:4200/",

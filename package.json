@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "lint": "ng lint",
-    "build": "ng build --configuration=production",
+    "build": "ng build",
+    "build:prod": "ng build --configuration=production",
     "test": "ng test --code-coverage --watch=false",
     "e2e": "ng e2e",
     "start": "ng serve",
@@ -37,6 +38,7 @@
     "@types/jasmine": "^3.5.14",
     "@types/jasminewd2": "^2.0.9",
     "@types/node": "^13.13.51",
+    "chromedriver": "^91.0.1",
     "codelyzer": "^6.0.2",
     "jasmine-core": "~3.8.0",
     "jasmine-spec-reporter": "~4.2.1",
