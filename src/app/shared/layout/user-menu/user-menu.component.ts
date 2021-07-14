@@ -16,7 +16,7 @@ export class UserMenuComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userService.getUser().subscribe(user => {
+    this.userService.getUser().subscribe((user: any) => {
       this.userMenu = this.menuService.getUserMenu(user.role);
     });
   }

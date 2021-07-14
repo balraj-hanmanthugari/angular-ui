@@ -1,4 +1,3 @@
-import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthenticationGuard } from './authentication/authentication.guard';
 
@@ -47,7 +46,7 @@ const routes: Routes = [
   }
 ];
 
-export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(
+export const AppRoutingModule = RouterModule.forRoot(
   routes,
   { useHash: true }
 );
